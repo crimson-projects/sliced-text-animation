@@ -1,0 +1,24 @@
+body{
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#text{
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+#text2{
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    height: 300px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}

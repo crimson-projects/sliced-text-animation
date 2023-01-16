@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliced Text Animation Effect using Blotter.js | Crimson</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Blotter/0.1.0/blotter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Blotter/0.1.0/materials/slidingDoorMaterial.js"></script>
+</head>
+<body>
+    <div id="text"></div>
+    <div id="text2"></div>
+    <script>
+        var innerText = document.getElementById("text");
+        var innerText2 = document.getElementById("text2");
+
+        var text = new Blotter.Text("SLIDING DOOR", {
+            family: "Barracuda",
+            size: 180,
+            fill: "#ff0040"
+        });
+        var text2 = new Blotter.Text("Text Animation", {
+            family: "Barracuda",
+            size: 100,
+            fill: "#ff6c91"
+        });
+
+        let material = new Blotter.SlidingDoorMaterial();
+        let material2 = new Blotter.SlidingDoorMaterial();
+
+        material2.uniforms.uAnimateHorizontal.value = 1;
+
+        let blotter = new Blotter(material, {
+            texts: text
+        });
+
+        let blotter2 = new Blotter(material2, {
+            texts: text2
+        });
+
+        let scope = blotter.forText(text);
+        let scope2 = blotter2.forText(text2);
+
+        scope.appendTo(innerText);
+        scope2.appendTo(innerText2);
+
+    </script>
+</body>
+</html>
